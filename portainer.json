@@ -2,7 +2,6 @@
   "nodes": [ 
 
     {
-        "id": "5e56c1da.90288",
         "label": "portainer",
         "disabled": false,
         "info": ""
