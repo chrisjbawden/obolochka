@@ -1,6 +1,182 @@
 {
-  "id": "91ad451.f6e52b8",
-  "label": "Sheet 1",
-  "nodes": [ ],
+  "nodes": [ 
+
+    {
+        "id": "5e56c1da.90288",
+        "type": "tab",
+        "label": "portainer",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b2b06854.66e6c8",
+        "type": "comment",
+        "z": "5e56c1da.90288",
+        "name": "----------Portainer------------",
+        "info": "",
+        "x": 180,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "dbe2126e.2db96",
+        "type": "debug",
+        "z": "5e56c1da.90288",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b407a3ba.f7d29",
+        "type": "inject",
+        "z": "5e56c1da.90288",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "50cb0711.c4e618"
+            ]
+        ]
+    },
+    {
+        "id": "6c461007.dae6",
+        "type": "change",
+        "z": "5e56c1da.90288",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 280,
+        "wires": [
+            [
+                "3ee1b605.9a9cca"
+            ]
+        ]
+    },
+    {
+        "id": "50cb0711.c4e618",
+        "type": "template",
+        "z": "5e56c1da.90288",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<iframe width=\"100%\" hieght=\"100%\" is=\"x-frame-bypass\" src=\"http://localhost:9000\"></iframe>",
+        "output": "str",
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "3ee1b605.9a9cca"
+            ]
+        ]
+    },
+    {
+        "id": "3ee1b605.9a9cca",
+        "type": "ui_template",
+        "z": "5e56c1da.90288",
+        "group": "5dc16e5d.c84ff",
+        "name": "",
+        "order": 109,
+        "width": 6,
+        "height": 1,
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 610,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49514d6.7a909b4",
+        "type": "inject",
+        "z": "5e56c1da.90288",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 180,
+        "wires": [
+            [
+                "6c461007.dae6"
+            ]
+        ]
+    },
+    {
+        "id": "5dc16e5d.c84ff",
+        "type": "ui_group",
+        "name": "System",
+        "tab": "4be07109.7cc29",
+        "order": 1,
+        "disp": false,
+        "width": "20",
+        "collapse": false
+    },
+    {
+        "id": "4be07109.7cc29",
+        "type": "ui_tab",
+        "name": "Settings",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    } 
+  ],
   "configs": [ ]
 }
